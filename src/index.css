@@ -59,7 +59,7 @@ img {
 
 .movie-container__img-img:hover {
   transform: scale(1.2);
-  opacity: 85%;
+  opacity: 95%;
 }
 
 .movie-container__title {

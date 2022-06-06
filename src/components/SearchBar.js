@@ -1,28 +1,27 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import debounce from 'lodash.debounce'
 
-export default function SearchBar({ movies, setMovies }) {
-    const [input, setInput] = useState('')
+function SearchBar({ setMovies }) {
+    const [input, setInput] = useState('')       
+    const delayedSearchMovies = useCallback(debounce(searchMovies, 1000), [input])
 
-    function searchMovies() {
-        const newMovies = movies.filter((movie) => {
+    async function searchMovies() {
+        const response = await fetch('https://mcuapi.herokuapp.com/api/v1/movies')
+        const data = await response.json()
+        const searchedMovies = data.data.filter((movie) => {
             if (input === '') {
-                return movie
+                return movie.trailer_url !== null
             } else {
-                return movie.title.toLowerCase().includes(input.toLowerCase())
+                return movie.title.toLowerCase().includes(input.toLowerCase()) && movie.trailer_url !== null
             }
         })
-        setMovies(newMovies)
-    }
-
-    const delayedSearchMovies = useCallback(debounce(searchMovies, 5000), [])
+        setMovies(searchedMovies)
+    }     
 
     useEffect(() => {
         delayedSearchMovies()
         return delayedSearchMovies.cancel
     }, [input, delayedSearchMovies])
-
-
 
     return (
         <div className="searchbar">
@@ -33,3 +32,5 @@ export default function SearchBar({ movies, setMovies }) {
         </div>
     )
 }
+
+export default SearchBar

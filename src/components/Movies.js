@@ -9,13 +9,12 @@ function Movies() {
 		async function fetchData() {
 			const response = await fetch('https://mcuapi.herokuapp.com/api/v1/movies')
 			const data = await response.json()
-            const validData = data.data.filter((data) => {
+            const validMovies = data.data.filter((movie) => {
                 return (
-                    data.trailer_url !== null
+                    movie.trailer_url !== null
                 )
             })
-            console.log(validData)
-			setMovies(validData)
+			setMovies(validMovies)
 		}
 		fetchData()		
 	}, [])
