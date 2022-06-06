@@ -1,8 +1,12 @@
+import React from 'react'
+import { Route, Routes } from 'react-router-dom';
+import Movies from './components/Movies';
+
 function App() {
   	return (
-    	<div className="App">
-			<h1>git push -u origin main</h1>
-    	</div>
+    	<Routes>
+			<Route path='/' element={<Movies />} />
+		</Routes>
   	);
 }
 
