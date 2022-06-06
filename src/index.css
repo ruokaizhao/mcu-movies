@@ -8,6 +8,9 @@ img {
 }
 
 .homepage-container {
+  max-width: 1680px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
 }
@@ -23,9 +26,17 @@ img {
 }
 
 .searchbar__input {
-  width: 60%;
-  height: 30px;
-  border-radius: 5px;
+  width: 70%;
+  padding: 1rem;
+  font-size: 1rem;  
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.searchbar__input:focus {
+  outline: none;
+  border-color: rgb(113, 158, 206);
+  box-shadow: 0 0 10px rgb(113, 158, 206);
 }
 
 .movies-container {
@@ -36,6 +47,8 @@ img {
 }
 
 .movie-container {
+  margin: auto;
+  max-width: 500px;
   background-color: rgb(240, 240, 240);
   border-radius: 1rem;
   padding: 1rem;
@@ -65,4 +78,43 @@ img {
 .movie-container__title {
   margin-bottom: 1rem;
   text-align: center;
+}
+
+@media only screen and (max-width: 1300px) {
+  .movies-container {
+    gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .movies-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .movies-container {
+    gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .movies-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .movies-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .searchbar__input {
+    width: 85%;
+  }
 }

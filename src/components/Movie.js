@@ -32,7 +32,9 @@ function Movie({ movie }) {
 
             <button onClick={handleShowTrailerClick}>Play Trailer</button>
 
-            {showTrailer && <iframe src={url} />}
+            {showTrailer && 
+             <iframe src={url} title={movie.title} width="100%" allowFullScreen={true} />         
+            }
         </div>
     )
 }
