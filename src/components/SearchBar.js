@@ -26,7 +26,13 @@ function SearchBar({ setMovies }) {
     return (
         <div className="searchbar">
             <form className="searchbar__form" onSubmit={(e) => e.preventDefault()}>
-                <input type="text" className="searchbar__input" placeholder="Enter the Marvel movie you'd like to see..." value={input} onChange={(e) => setInput(e.target.value)} />
+                <input 
+                    type="text"
+                    className="searchbar__input" 
+                    placeholder="Enter the Marvel movie you'd like to see..." 
+                    value={input} 
+                    onChange={(e) => setInput(e.target.value)} 
+                />
             </form>
         </div>
     )
