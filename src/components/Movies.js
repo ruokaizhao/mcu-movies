@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
+import FilterMovies from './FilterMovies'
 import Movie from './Movie'
 import SearchBar from './SearchBar'
 
 function Movies() {
     const [movies, setMovies] = useState([])
+    const [filteredMovies, setFilteredMovies] = useState([])
 
     return (
         <div className="homepage-container">
-            <SearchBar movies={movies} setMovies={setMovies} />
+            <SearchBar setMovies={setMovies} />
+            <FilterMovies movies={movies} setFilteredMovies={setFilteredMovies} />
             <div className="movies-container">
-            {movies?.map((movie) => {
+            {filteredMovies?.map((movie) => {
                 return (
                     <Movie key={movie.id} movie={movie} />
                 )
