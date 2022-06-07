@@ -15,14 +15,10 @@ img {
   flex-direction: column;
 }
 
-.searchbar {
-  padding-top: 2rem;
-}
-
 .searchbar__form {
+  padding-top: 2rem;
   display: flex;
   justify-content: center;
-  gap: 1rem;
 }
 
 .searchbar__input {
@@ -37,6 +33,30 @@ img {
   outline: none;
   border-color: rgb(113, 158, 206);
   box-shadow: 0 0 10px rgb(113, 158, 206);
+}
+
+.sort-filter-container {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sort-container {
+  display: flex;
+}
+
+.sort-container select {
+  width: 100%;
+}
+
+.sort-container button {
+  width: 100%;
 }
 
 .movies-container {
@@ -116,5 +136,9 @@ img {
 
   .searchbar__input {
     width: 85%;
+  }
+
+  .sort-filter-container {
+    width: 95%;
   }
 }

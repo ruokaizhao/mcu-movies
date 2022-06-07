@@ -27,13 +27,16 @@ function FilterMovies({ movies, setFilteredMovies }) {
     }, [movies])
 
     return (
-        <select defaultValue="-" onChange={handleChange} ref={filterRef}>
-            <option value="-">All Phases</option>
-            <option value="1">Phase I</option>
-            <option value="2">Phase II</option>
-            <option value="3">Phase III</option>
-            <option value="4">Phase IV</option>
-        </select>   
+        <div className="filter-container">
+            <label>Select a phase</label>
+            <select defaultValue="-" onChange={handleChange} ref={filterRef}>
+                <option value="-">All Phases</option>
+                <option value="1">Phase I</option>
+                <option value="2">Phase II</option>
+                <option value="3">Phase III</option>
+                <option value="4">Phase IV</option>
+            </select>  
+        </div>         
     )
 }
 

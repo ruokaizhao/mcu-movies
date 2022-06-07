@@ -11,8 +11,10 @@ function Movies() {
     return (
         <div className="homepage-container">
             <SearchBar setMovies={setMovies} />
-            <SortMovies filteredMovies={filteredMovies} setFilteredMovies={setFilteredMovies} />
-            <FilterMovies movies={movies} setFilteredMovies={setFilteredMovies} />
+            <div className="sort-filter-container">
+                <FilterMovies movies={movies} setFilteredMovies={setFilteredMovies} />
+                <SortMovies filteredMovies={filteredMovies} setFilteredMovies={setFilteredMovies} />                
+            </div>            
             <div className="movies-container">
             {filteredMovies?.map((movie) => {
                 return (
