@@ -29,12 +29,10 @@ function MovieDetail({ filteredMovies }) {
                 </p>
                 <p>Release Date: {movieDetail.release_date}</p>
                 <button className="movie-detail__button">Play Trailer</button>
-            </div>
-            
-            <div className="movie-detail__trailer-overview">
-                <iframe src={secureUrl} title={movieDetail.title} width="100%" height="100%" allowFullScreen={true} />
-                <p><strong>Plot:</strong><br/><br/>{movieDetail.overview}</p>
-            </div>            
+            </div>           
+           
+            <iframe src={secureUrl} title={movieDetail.title} width="100%" height="100%" allowFullScreen={true} className="movie-detail__iframe" />
+            <p className="movie-detail__p"><strong>Plot:</strong><br/><br/>{movieDetail.overview}</p>                  
         </div>
     )
 }
