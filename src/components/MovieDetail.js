@@ -32,7 +32,7 @@ function MovieDetail({ filteredMovies }) {
             </div>
             
             <div className="movie-detail__trailer-overview">
-                <iframe src={url} title={movieDetail.title} width="100%" height="100%" allowFullScreen={true} />
+                <iframe src={secureUrl} title={movieDetail.title} width="100%" height="100%" allowFullScreen={true} />
                 <p><strong>Plot:</strong><br/><br/>{movieDetail.overview}</p>
             </div>            
         </div>
