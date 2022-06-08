@@ -15,7 +15,11 @@ function SearchBar({ setMovies }) {
                 return movie.title.toLowerCase().includes(input.toLowerCase()) && movie.trailer_url !== null
             }
         })
-        setMovies(searchedMovies)
+        // Convert box_office to integer for sorting purposes.
+        const searchedMovieswithIntegerBoxOffice = searchedMovies.map((searchMovie) => {
+            return {...searchMovie, 'box_office': parseInt(searchMovie['box_office'])}
+        })
+        setMovies(searchedMovieswithIntegerBoxOffice)
     }     
 
     useEffect(() => {
@@ -24,7 +28,7 @@ function SearchBar({ setMovies }) {
     }, [input, delayedSearchMovies])
 
     return (
-        <form className="searchbar__form" onSubmit={(e) => e.preventDefault()}>
+        <form className="searchbar" onSubmit={(e) => e.preventDefault()}>
             <input 
                 type="text"
                 className="searchbar__input" 

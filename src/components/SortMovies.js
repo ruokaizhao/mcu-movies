@@ -2,9 +2,15 @@ import React, { useState } from 'react'
 
 function SortMovies({ filteredMovies, setFilteredMovies }) {
     const [sortValue, setSortValue] = useState('release_date')
+    const [isAscending, setIsAscending] = useState(true)
 
     function handleChange(e) {
         setSortValue(e.target.value)
+    }
+
+    function handleClick() {
+        isAscending? handleAscendingClick() : handleDescendingClick()
+        setIsAscending((isAscending) => !isAscending)
     }
 
     function handleAscendingClick() {
@@ -39,8 +45,9 @@ function SortMovies({ filteredMovies, setFilteredMovies }) {
                 <option value="box_office">Box Office</option>
                 <option value="release_date">Release Date</option>
             </select>
-            <button type="submit" onClick={handleAscendingClick}>Sort Ascendingly</button>
-            <button type="submit" onClick={handleDescendingClick}>Sort Descendingly</button>
+            <button type="submit" onClick={handleClick}>
+                {isAscending ? 'Sort Ascendingly' : 'Sort Descendingly'}                
+            </button>
         </div>        
     )
 }
