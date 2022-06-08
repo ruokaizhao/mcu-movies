@@ -187,12 +187,6 @@ img {
   margin-bottom: 1rem;
 }
 
-.movie-detail__button {
-  display: none;
-}
-
-
-
 @media only screen and (max-width: 1300px) {
   .movies-container {
     gap: 2rem;

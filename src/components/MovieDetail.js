@@ -28,7 +28,6 @@ function MovieDetail({ filteredMovies }) {
                 `$${Math.floor(parseInt(movieDetail['box_office'])/1.0e+9*100)/100} billion`}
                 </p>
                 <p>Release Date: {movieDetail.release_date}</p>
-                <button className="movie-detail__button">Play Trailer</button>
             </div>           
            
             <iframe src={secureUrl} title={movieDetail.title} width="100%" height="100%" allowFullScreen={true} className="movie-detail__iframe" />
