@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Movie({ movie }) {
-    const url = movie.trailer_url.includes('youtu.be') ? movie.trailer_url.replace('youtu.be', 'www.youtube.com/embed') : movie.trailer_url
     const navigate = useNavigate()
 
     function handleMovieClick() {

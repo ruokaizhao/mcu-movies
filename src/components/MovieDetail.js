@@ -7,6 +7,7 @@ function MovieDetail({ filteredMovies }) {
         return filteredMovie.title === params['movieTitle']
     })
     const url = movieDetail.trailer_url.includes('youtu.be') ? movieDetail.trailer_url.replace('youtu.be', 'www.youtube.com/embed') : movieDetail.trailer_url
+    const secureUrl = url.includes('http://players') ? url.replace('http://players', 'https://players') : url
 
     return (
         <div className="movie-detail">
