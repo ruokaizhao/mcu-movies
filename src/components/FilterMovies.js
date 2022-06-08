@@ -15,6 +15,7 @@ function FilterMovies({ movies, setFilteredMovies }) {
         setFilteredMovies(filteredMovies)
     }
 
+    // When new data comes in after search, set filteredMovies according to the current phase.
     useEffect(() => {
         const filteredMovies = movies.filter((movie) => {
             if (filterRef.current.value === '-') {

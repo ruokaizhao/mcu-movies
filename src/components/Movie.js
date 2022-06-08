@@ -1,23 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Movie({ movie }) {
-    const [showTrailer, setShowTrailer] = useState(false)
     const url = movie.trailer_url.includes('youtu.be') ? movie.trailer_url.replace('youtu.be', 'www.youtube.com/embed') : movie.trailer_url
+    const navigate = useNavigate()
 
-    function handleShowTrailerClick() {
-        setShowTrailer((showTrailer) => !showTrailer)
+    function handleMovieClick() {
+        navigate(`/${movie.title}`)
     }
 
     return (
-        <div className="movie-container">
-            <div className="movie-container__img">
-                <img src={movie.cover_url} alt="" className="movie-container__img-img" />
+        <div className="movie">
+            <div className="movie__img" onClick={handleMovieClick}>
+                <img src={movie.cover_url} alt="" className="movie__img-img" />
             </div>           
 
-            <h3 className="movie-container__title">{movie.title}</h3>
+            <h3 className="movie__title">{movie.title}</h3>
 
-            <p>
-            Box Office: {movie.box_office === '0' 
+            <p className="movie__box_office">
+            Box Office: {movie.box_office === 0 
             ? 
             'Not yet released' 
             : 
@@ -29,12 +30,6 @@ function Movie({ movie }) {
             </p>
 
             <p>Release Date: {movie.release_date}</p>
-
-            <button onClick={handleShowTrailerClick}>Play Trailer</button>
-
-            {showTrailer && 
-             <iframe src={url} title={movie.title} width="100%" allowFullScreen={true} />         
-            }
         </div>
     )
 }

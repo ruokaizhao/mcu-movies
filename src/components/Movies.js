@@ -4,9 +4,9 @@ import Movie from './Movie'
 import SearchBar from './SearchBar'
 import SortMovies from './SortMovies'
 
-function Movies() {
+function Movies({ filteredMovies, setFilteredMovies }) {
     const [movies, setMovies] = useState([])
-    const [filteredMovies, setFilteredMovies] = useState([])
+    
 
     return (
         <div className="homepage-container">
@@ -16,14 +16,13 @@ function Movies() {
                 <SortMovies filteredMovies={filteredMovies} setFilteredMovies={setFilteredMovies} />                
             </div>            
             <div className="movies-container">
-            {filteredMovies?.map((movie) => {
-                return (
-                    <Movie key={movie.id} movie={movie} />
-                )
-            })}
-        </div>
-        </div>
-        
+                {filteredMovies.map((movie) => {
+                    return (
+                        <Movie key={movie.id} movie={movie} />
+                    )
+                })}
+            </div>
+        </div>        
     )
 }
 
