@@ -9,9 +9,9 @@ function Movies({ filteredMovies, setFilteredMovies }) {
     
 
     return (
-        <div className="homepage-container">
+        <div className="homepage">
             <SearchBar setMovies={setMovies} />
-            <div className="sort-filter-container">
+            <div className="sort-filter">
                 <FilterMovies movies={movies} setFilteredMovies={setFilteredMovies} />
                 <SortMovies filteredMovies={filteredMovies} setFilteredMovies={setFilteredMovies} />                
             </div>            

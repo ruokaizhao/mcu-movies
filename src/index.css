@@ -1,17 +1,23 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: rgb(240, 240, 240);
+  font-family: "Poppins", sans-serif;
 }
 
 img {
   width: 100%;
 }
 
-.homepage-container {
+.homepage {
   max-width: 1680px;
   margin-left: auto;
   margin-right: auto;
@@ -39,30 +45,74 @@ img {
   box-shadow: 0 0 10px rgb(113, 158, 206);
 }
 
-.sort-filter-container {
+.sort-filter {
   margin-top: 1rem;
   display: flex;
   align-self: center;
   justify-content: space-between;
-  width: 72%;
-}
-
-.filter-container {
-  width: 25%;
-  display: flex;
-}
-
-.sort-container {
   width: 70%;
+}
+
+.filter {
+  width: 50%;
   display: flex;
+  gap: 1rem;
 }
 
-.sort-container select {
-  width: 100%;
+.filter label {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-.sort-container button {
-  width: 100%;
+.filter select {
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 0.5rem;
+}
+
+.filter select:hover {
+  cursor: pointer;
+}
+
+.sort {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem
+}
+
+.sort select {
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 0.5rem;
+}
+
+.sort select:hover {
+  cursor: pointer;
+}
+
+.sort button {
+  border: 1px solid rgb(225, 225, 225);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  text-align: start;
+}
+
+.sort button:hover {
+  background-color: rgb(225, 225, 225);
+  cursor: pointer;
 }
 
 .movies-container {
@@ -97,13 +147,13 @@ img {
   transition: 0.3s ease-in-out;
 }
 
-.movie-__img-img:hover {
+.movie__img-img:hover {
   transform: scale(1.2);
   opacity: 95%;
 }
 
 .movie__title {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -128,7 +178,7 @@ img {
 }
 
 .movie-detail__title {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .movie-detail__box-office {
@@ -162,16 +212,23 @@ img {
   .movies-container {
     gap: 2rem;
   }
+
+  .filter {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .sort {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 800px) {
   .movies-container {
     grid-template-columns: 1fr;
     gap: 3rem;
-  }
-
-  .sort-container {
-    flex-direction: column;
   }
 }
 
@@ -186,7 +243,7 @@ img {
     width: 85%;
   }
 
-  .sort-filter-container {
-    width: 90%;
+  .sort-filter {
+    width: 85%;
   }
 }

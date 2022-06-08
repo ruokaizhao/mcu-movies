@@ -40,10 +40,10 @@ function SortMovies({ filteredMovies, setFilteredMovies }) {
     }
 
     return (
-        <div className="sort-container">
+        <div className="sort">
             <select defaultValue="release_date" onChange={handleChange}>
-                <option value="box_office">Box Office</option>
-                <option value="release_date">Release Date</option>
+                <option value="release_date">Release Date</option >
+                <option value="box_office">Box Office</option>                
             </select>
             <button type="submit" onClick={handleClick}>
                 {isAscending ? 'Sort Ascendingly' : 'Sort Descendingly'}                

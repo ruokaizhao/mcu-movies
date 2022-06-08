@@ -1,4 +1,3 @@
-import { filter } from 'lodash'
 import React, { useEffect, useRef } from 'react'
 
 function FilterMovies({ movies, setFilteredMovies }) {
@@ -28,8 +27,8 @@ function FilterMovies({ movies, setFilteredMovies }) {
     }, [movies])
 
     return (
-        <div className="filter-container">
-            <label>Select a phase</label>
+        <div className="filter">
+            <label>Select a phase:</label>
             <select defaultValue="-" onChange={handleChange} ref={filterRef}>
                 <option value="-">All Phases</option>
                 <option value="1">Phase I</option>
