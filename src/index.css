@@ -136,6 +136,7 @@ img {
 
 .movie__img { 
   margin-bottom: 1rem; 
+  max-width: 380px;
   width: 75%;  
   align-self: center;
   border-radius: 1rem;
