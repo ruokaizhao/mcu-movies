@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+Welcome to the Marvel Movie Dashboard!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is the phase-2 put it all together project using React to build a frontend single page application.
 
-## Available Scripts
+The data used in this project is about foods nutritions such as calorie, protein, fat, etc..
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+Clone the repo and in the root directory of this repo, run:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+which will install all the dependencies of the project, then run:
 
-### `npm test`
+```bash
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+to start the application.
 
-### `npm run build`
+On the start, the user is on the Home page with a welcoming message, there are three links on the top left of the page, upon clicking, each one will take user to different page of the application, and the url in the browser's address bar will change accordingly.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Foods page renders severing things:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. There is a search bar letting user search for food by name, it does not need to be a exact match for the food, just a part of the name will bring the food/foods up. Also uppercase letter and lowercase letter are treated as the same.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Under search bar, there is a dropdown menu letting user filter foods by category.
 
-### `npm run eject`
+3. Below dropdown menu, there is another dropdown menu with a button, letting user sort the foods by enery, protein, fat or carbohydrate. The default way is sorting descendingly, but once user clicks the Sort Descending button, the text will change to Sort Ascending, which upon click, will sort the food ascendingly by the property selected.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. On the up right corner, we have a form with several input boxes, user can submit their own food by providing the food's name, image url, protein... The submitted data will appear in the page without refreshing and preserved in the backend, meaning that it will still be there after refreshing the page.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Below the above-mentioned elements, there is the main area of the page:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Each food is rendered individually inside a card, with food's name, image, energy, protein, fat, carbohydrate and category.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+On the bottom of each card, there are two buttons:
 
-## Learn More
+1. A star button letting user favorite or unfavorite a food, this will not be preserved in the backend.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. A Remove button, upon clicking, will remove the card for the food from the page, along deleting it in the backend.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The Terminology page will bring user to a page with 4 links, upon clicking, each link will bring a short explanation of the word, also the url in the browser's address bar will change accordingly.
 
-### Code Splitting
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Phase-1 Project
 
-### `npm run build` fails to minify
+When the page loaded, it will retrieve data a public API and render the information to the page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+One the top of the page, there is a search bar which allows users to search for a MCU movie by its name, the page will show the movie/movies the user searched for(it does not need to be the precise name of the movie, just a portion of the movie title would be suffice to complete the search, also the search keywords are not case sensitive), or popup a alert saying "No matches..." if there is no match.
+
+Underneath the search bar, there is a drop down menu with options of "All phases, phase I to IV", after choosing one specific phase, the page will be re-rendered to only show movies belong to that phase.
+
+The information is categorized by movie titles, with title, box office, release date.
+
+There is a button "Increase box office by 10 million", which when clicked, will increase the box office by 10 million (just fictional).
+
+Underneath the "Increase box office..." button, there is a storyline triangle, when clicked, will show the storyline of the movie.
+
+On the bottom of each container, there is a "Play trailer" button, which when clicked, will show the trailer of the movie using iframe tag, and remove the iframe when clicked again.
