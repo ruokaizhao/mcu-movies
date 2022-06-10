@@ -2,6 +2,8 @@ Welcome to the Marvel Movie Dashboard!
 
 This single page application built with React utilizes a public API to fetch and display detailed information about released and unreleased Marvel movies.
 
+This project has also been deployed to Heroku at [here](https://mcu-movies-react.herokuapp.com/).
+
 ## Installation
 
 Fork and clone the repo and in the root directory of this repo, run:
