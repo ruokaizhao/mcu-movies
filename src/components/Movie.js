@@ -1,36 +1,35 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Movie({ movie }) {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    function handleMovieClick() {
-        navigate(`/${movie.title}`)
-    }
+  function handleMovieClick() {
+    navigate(`/${movie.title}`);
+  }
 
-    return (
-        <div className="movie">
-            <div className="movie__img" onClick={handleMovieClick}>
-                <img src={movie.cover_url} alt="" className="movie__img-img" />
-            </div>           
+  return (
+    <div className="movie">
+      <div className="movie__img" onClick={handleMovieClick}>
+        <img src={movie.cover_url} alt="" className="movie__img-img" />
+      </div>
 
-            <h3 className="movie__title">{movie.title}</h3>
+      <h3 className="movie__title">{movie.title}</h3>
 
-            <p className="movie__box_office">
-            Box Office: {movie.box_office === 0 
-            ? 
-            'Not yet released' 
-            : 
-            movie.box_office < 1.0e+9 
-            ? 
-            `$${Math.floor(parseInt(movie['box_office'])/1.0e+6)} million`
-            :
-            `$${Math.floor(parseInt(movie['box_office'])/1.0e+9*100)/100} billion`}
-            </p>
+      <p className="movie__box_office">
+        Box Office:{" "}
+        {movie.box_office === 0
+          ? "Not yet released"
+          : movie.box_office < 1.0e9
+          ? `$${Math.floor(parseInt(movie["box_office"]) / 1.0e6)} million`
+          : `$${
+              Math.floor((parseInt(movie["box_office"]) / 1.0e9) * 100) / 100
+            } billion`}
+      </p>
 
-            <p>Release Date: {movie.release_date}</p>
-        </div>
-    )
+      <p>Release Date: {movie.release_date}</p>
+    </div>
+  );
 }
 
-export default Movie
+export default Movie;
